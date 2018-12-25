@@ -1,0 +1,23 @@
+@charset "UTF-8";
+
+
+.header{
+	height:50px;
+	background-color:gray;
+}
+
+.namename{
+	float:left;
+	color:white;
+}
+
+.logout{
+	position: relative;
+	margin-left:450px;
+	margin-top:100px;
+	color:red;
+}
+
+.hello{
+	text-align: center;
+}

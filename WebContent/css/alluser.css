@@ -1,0 +1,108 @@
+@charset "UTF-8";
+
+
+
+.header{
+	height:50px;
+	background-color:gray;
+}
+
+.namename{
+	float:left;
+	color:white;
+}
+
+.logout{
+	position: relative;
+	margin-left:450px;
+	margin-top:100px;
+	color:red;
+}
+
+
+.hello{
+	text-align: center;
+}
+
+.sinki{
+	float:right;
+}
+
+.login{
+	float:left;
+	margin-left:200px;
+}
+
+.botan1{
+	margin-top:10px;
+	margin-left:20px;
+	width: 200px;
+}
+
+.passwordid{
+	clear: both;
+
+}
+
+.botan2{
+	margin-top:13px;
+	margin-left:20px;
+	width: 200px;
+}
+
+.password{
+	float:left;
+	margin-left:200px;
+}
+
+
+.seinengappi{
+	clear: both;
+
+}
+
+.seinen{
+	float:left;
+	margin-left:200px;
+}
+
+.botan3{
+	width: 100px;
+			margin-top:13px;
+	margin-left:20px;
+}
+
+.botan4{
+	width: 100px;
+}
+
+.kensaku{
+	margin-left:280px;
+}
+
+
+.hyou{
+	margin-left:150px;
+}
+
+.koumoku{
+	background-color:#C0C0C0;
+}
+
+.syou{
+	color:white;
+	background-color:#3333FF;
+	text-decoration:none;
+}
+
+.kouu{
+	color:white;
+	background-color:#66FF00;
+	text-decoration:none;
+}
+
+.saku{
+	color:white;
+	background-color:#FF3366;
+	text-decoration:none;
+}

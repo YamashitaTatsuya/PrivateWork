@@ -1,0 +1,117 @@
+@charset "UTF-8";
+
+.danger{
+	color:red;
+}
+
+.header{
+	height:50px;
+	background-color:gray;
+}
+
+.namename{
+	float:left;
+	color:white;
+}
+
+.logout{
+	position: relative;
+	margin-left:450px;
+	margin-top:100px;
+	color:red;
+}
+
+.hello{
+	text-align: center;
+}
+
+
+.login{
+	position: relative;
+	margin-left:100px;
+	float:left;
+}
+
+
+.id{
+	float:left;
+	padding-left:100px;
+}
+
+
+
+.passwordid{
+	clear:both;
+	margin-left:100px;
+}
+
+.password{
+
+	float:left;
+}
+
+.botan2{
+	position: relative;
+	margin-left:10px;
+	margin-top:10px;
+}
+
+.passwordid2{
+	clear:both;
+	margin-left:100px;
+}
+
+.password2{
+
+	float:left;
+}
+
+.botan3{
+	position: relative;
+	margin-left:10px;
+	margin-top:10px;
+}
+
+
+.username{
+	clear:both;
+	margin-left:100px;
+
+}
+
+.user{
+	float:left;
+}
+
+.botan4{
+	position: relative;
+	margin-left:10px;
+	margin-top:10px;
+}
+
+.seinengappi{
+	clear:both;
+	margin-left:100px;
+
+}
+
+.seinen{
+	float:left;
+}
+
+.botan5{
+	position: relative;
+	margin-left:10px;
+	margin-top:10px;
+}
+
+
+.tourokubotan{
+		clear:both;
+	margin-left:100px;
+	margin-top:50px;
+}
+
+.modoru{
+	margin-left:100px;
+}
