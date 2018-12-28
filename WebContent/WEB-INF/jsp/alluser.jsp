@@ -15,7 +15,6 @@
 <p class="namename">${userInfo.name}さん</p>
 <input type="hidden" name="name" value="${kanriname.name}">
 
-
 <a href="LogoutServlet" class="logout">ログアウト</a>
 </div>
 
@@ -24,6 +23,8 @@
 	<c:if test="${userInfo.loginId == 'admin'}">
 	<a href="UserNewCreateServlet">新規登録</a>
 	</c:if>
+
+	<a href="TopicListServlet" class="board">掲示板</a>
 
 
 	<form class="form-signin" action="UserListServlet" method="post">
@@ -44,8 +45,6 @@
 	<input type="date" name="searchBirthDate2" class="botan4" >
 	</div>
 	</div>
-
-
 
 
 	<input type="submit" value="検索" class="kensaku">

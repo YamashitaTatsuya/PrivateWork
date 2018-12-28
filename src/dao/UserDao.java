@@ -15,6 +15,7 @@ import java.util.List;
 
 import javax.xml.bind.DatatypeConverter;
 
+import model.Board;
 import model.User;
 
 /**
@@ -31,6 +32,7 @@ public class UserDao {
      * @param password
      * @return
      */
+
     public User findByLoginInfo(String loginId, String password) {
         Connection conn = null;
         try {
@@ -125,8 +127,63 @@ public class UserDao {
         return userList;
     }
 
-
 //自分で足したコード//
+
+    /**
+     * 全てのトピックを取得する
+     * @return
+     */
+    public List<Board> findtopic() {
+        Connection conn = null;
+        List<Board> topicList = new ArrayList<Board>();
+
+        try {
+            // データベースへ接続
+            conn = DBManager.getConnection();
+
+            // SELECT文を準備
+            // TODO: 未実装：管理者以外を取得するようSQLを変更した
+            String sql = "SELECT * FROM user where login_id != 'admin' ";
+
+
+
+             // SELECTを実行し、結果表を取得
+            Statement stmt = conn.createStatement();
+            ResultSet rs = stmt.executeQuery(sql);
+
+            // 結果表に格納されたレコードの内容を
+            // Userインスタンスに設定し、ArrayListインスタンスに追加
+            while (rs.next()) {
+                int id = rs.getInt("id");
+                String loginId = rs.getString("login_id");
+                String name = rs.getString("name");
+                Date birthDate = rs.getDate("birth_date");
+                String password = rs.getString("password");
+                String createDate = rs.getString("create_date");
+                String updateDate = rs.getString("update_date");
+                User user = new User(id, loginId, name, birthDate, password, createDate, updateDate);
+
+                topicList.add(user);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return null;
+        } finally {
+            // データベース切断
+            if (conn != null) {
+                try {
+                    conn.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                    return null;
+                }
+            }
+        }
+        return topicList;
+    }
+
+
+
 
 
     /**
@@ -405,6 +462,7 @@ public void UpDateInfo(String loginId,String password,String password2,String na
         //ハッシュ生成処理
         byte[] bytes = MessageDigest.getInstance(algorithm).digest(source.getBytes(charset));
         String result = DatatypeConverter.printHexBinary(bytes);
+
         //標準出力
         System.out.println(result);
 
@@ -413,9 +471,7 @@ public void UpDateInfo(String loginId,String password,String password2,String na
         pStmt.setString(3, birthDate);
         pStmt.setString(4, loginId);
 
-
         pStmt.executeUpdate();
-
 
     } catch (SQLException e) {
         e.printStackTrace();
@@ -482,7 +538,6 @@ public void UpDateInfo2(String loginId,String name,String birthDate) throws SQLE
         }
     }
 }
-
 
 //////////削除画面のコード////////////
 

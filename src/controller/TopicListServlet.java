@@ -15,29 +15,24 @@ import dao.UserDao;
 import model.User;
 
 /**
- * Servlet implementation class UserListServlet
+ * Servlet implementation class TopicListServlet
  */
-@WebServlet("/UserListServlet")
-public class UserListServlet extends HttpServlet {
+@WebServlet("/TopicListServlet")
+public class TopicListServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
     /**
      * @see HttpServlet#HttpServlet()
      */
-
-    public UserListServlet() {
+    public TopicListServlet() {
         super();
+        // TODO Auto-generated constructor stub
     }
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-
-		// TODO 未実装：ログインセッションがない場合、ログイン画面にリダイレクトさせる
-		// セッションスコープからインスタンスを取得
-		//HttpSessionインスタンスの取得//
 
 
 		HttpSession session = request.getSession();
@@ -60,40 +55,17 @@ public class UserListServlet extends HttpServlet {
 		// ユーザ一覧のjspにフォワード
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/alluser.jsp");
 		dispatcher.forward(request, response);
-	}
 
+
+
+	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO  未実装：検索処理全般
-		//検索ボタンを押した時の処理を記入
-        // リクエストパラメータの文字コードを指定
-        request.setCharacterEncoding("UTF-8");
-
-		// リクエストパラメータの入力項目を取得
-        String searchloginId = request.getParameter("searchLoginId");
-		String searchName = request.getParameter("searchName");
-		String searchBirthDate1 = request.getParameter("searchBirthDate1");
-		String searchBirthDate2 = request.getParameter("searchBirthDate2");
-
-
-
-		// ユーザ一覧情報を取得
-				UserDao userDao = new UserDao();
-
-				List<User> userList = userDao.findSearch(searchloginId,searchName,searchBirthDate1,searchBirthDate2);
-
-
-				// リクエストスコープにユーザ一覧情報をセット
-				request.setAttribute("userList", userList);
-
-
-				// ユーザ一覧のjspにフォワード
-				RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/alluser.jsp");
-				dispatcher.forward(request, response);
-
+		// TODO Auto-generated method stub
+		doGet(request, response);
 	}
 
 }
